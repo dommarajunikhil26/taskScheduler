@@ -16,5 +16,7 @@ public interface JobMapper {
     @Mapping(target = "lastHeartbeat", ignore = true)
     @Mapping(target = "createdAt", ignore = true)
     Job toEntity(JobRequestDto jobRequestDto);
+
+    @Mapping(target = "uuid", source = "id")
     JobResponseDto toDto(Job job);
 }

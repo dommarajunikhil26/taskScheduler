@@ -21,4 +21,6 @@ public interface JobRepository extends JpaRepository<Job, UUID> {
 
     @Query("SELECT j FROM Job j WHERE j.status = :status AND j.lastHeartbeat < :threshold")
     List<Job> findStuckJobs(@Param("status") Status status, @Param("threshold") Instant threshold);
+
+    long countByStatus(Status status);
 }
