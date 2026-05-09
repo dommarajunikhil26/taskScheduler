@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: task-scheduler
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/job
+    username:
+    password:
+
+  redis:
+    host: localhost
+    port: 6379
+    password:
+
+worker:
+  id: worker-1
